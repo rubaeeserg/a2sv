@@ -125,7 +125,7 @@ def runScan(s_type):
     global crime_result
     global anonymous_result
     
-    print "GREEN"
+    print ("GREEN")
     # SSL Check Logic --------------------------- 
     showDisplay(displayMode,GREEN+"[INF] Check the SSL.."+END)
     result = subprocess.Popen(['timeout','4','openssl','s_client','-connect',targetIP+":"+str(port)], stderr=subprocess.STDOUT, stdout=subprocess.PIPE).communicate()[0]
@@ -189,8 +189,8 @@ def outVersion():
     print "A2SV v"+a2sv_version
 
 def updateVersion():
-    print GREEN+"[INF] Update A2SV"+END
-    print GREEN+"[INF] This A2SV version is .. v"+a2sv_version+END
+    print (GREEN)+"[INF] Update A2SV"+END
+    print (GREEN)+"[INF] This A2SV version is .. v"+a2sv_version+END
     os.chdir(os.path.dirname( os.path.abspath( __file__ )))
     os.system("git reset --hard HEAD")
     os.system("git pull -v")
@@ -416,7 +416,7 @@ if targetMode == 1:
         runScan(checkVun)
         outReport(output_ck,output_path,targetMode)
         i+=1
-    print "_________________________________________________________________________"
+    print ("_________________________________________________________________________")
 else:
     runScan(checkVun)
     print "_________________________________________________________________________"
